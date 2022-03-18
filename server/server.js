@@ -12,4 +12,8 @@ const fruitRoutes = require('./routes/fruit')
 
 server.use('/api/v1/fruit', fruitRoutes)
 
+server.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/index.html'))
+})
+
 module.exports = server
